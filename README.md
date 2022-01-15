@@ -102,21 +102,17 @@ Using TSNE for Dimentionality reduction for 15 Features(Generated after cleaning
 ![11](https://user-images.githubusercontent.com/46763031/149611406-4857f5df-1df9-497a-b5f9-ee23f0dedda4.PNG)
 
 ### Machine Learning Models:
-   - Trained a random model to check Worst case log loss and got log loss as 0.887699
-   - Trained some models and also tuned hyperparameters using Random and Grid search. I didnt used total train data to train my algorithms. Because of ram availability constraint in my PC, i sampled some data and Trained my models. below are models and their logloss scores. you can check total modelling and feature extraction [here](https://github.com/rorschach02/Quora_Similarity_Questions/blob/main/ML_models.ipynb)  
-   For below table BF - Basic features, AF - Advanced features, DF - Distance Features including WMD.
+  Various models has been tried like **Logistic Regression, Linear SVM and GBDT** with **BoW, TF-IDF and W2V** vectorizer along with hand-crafted features. But out of all these   **GBDT with TFIDF vectorizer** gave the best performance.
+   For all other models training, calibration and tunning look at the notebook,
 
-| Model         | Features Used | Log Loss |
-| ------------- | ------------- | ------------- |
-| Logistic Regression  | BF + AF  | 0.4003415  |
-| Linear SVM           | BF + AF  | 0.4036245  |
-| Random Forest  | BF + AF  | 0.4143914  |
-| XGBoost  | BF + AF  | 0.362546  |
-| Logistic Regression  | BF + AF + Tf-Idf  | 0.358445  |
-| Linear SVM  | BF + AF + Tf-Idf  | 0.362049  |
-| Logistic Regression  | BF + AF + DF + AVG-W2V  | 0.3882535  |
-| Linear SVM  |  BF + AF + DF + AVG-W2V  | 0.394458  |
-| XGBoost  | BF + AF + DF + AVG-W2V  | 0.313341  |
+   Performance Summary: 
+| Model         | Test Log Loss |
+| ------------- | ------------- |
+| Random Model  |  0.887242646958  |
+| Logistic Regression  |  0.520035530431  |
+| Linear SVM  |  0.489669093534 |
+| XGBoost  |  0.357054433715  |
+
 
 ##### References:
 1. https://www.kaggle.com/c/quora-question-pairs 
